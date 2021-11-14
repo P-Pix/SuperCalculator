@@ -1,2 +1,2 @@
 # SuperCalculator
-Exercice for gtkmm
+Exercice with gtkmm
