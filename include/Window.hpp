@@ -5,17 +5,28 @@
 #include "gtkmm-3.0/gtkmm.h"
 #include "Maths.hpp"
 
-class Window
-{
-private:
+namespace SC {
+    class Window : public Gtk::Window {
+    private:
+        int m_argc;
+        char **m_argv;
 
-protected:
+        Gtk::Main kit;
 
-public:
-    Window(int argc, char **argv);
-    ~Window(void);
-    void init(int width, int height, std::string title);
-    void run(void);
-};
+    protected:
 
+    public:
+        /// Constructor
+        Window(int argc, char **argv);
+
+        /// Destructor
+        ~Window(void);
+
+        /// Initialize the window
+        void init(int width, int height, std::string title);
+
+        /// Run the window
+        void run(void);
+    };
+}
 #endif
