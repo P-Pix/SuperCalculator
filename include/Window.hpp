@@ -6,12 +6,13 @@
 #include "Maths.hpp"
 
 namespace SC {
-    class Window : public Gtk::Window {
+class Window {
     private:
         int m_argc;
         char **m_argv;
 
-        Gtk::Main kit;
+        Gtk::Main m_main;
+        Gtk::Window m_window;
 
     protected:
 

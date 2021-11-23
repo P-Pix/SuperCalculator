@@ -1,16 +1,6 @@
 #include <iostream>
 #include "../include/Window.hpp"
 
-int main(int argc, char **argv) {
-    /*
-    SC::Window window(argc, argv);
-    window.init(800, 600, "Super Calculator");
-    window.run();
-     */
-    testMatrix();
-    return 0;
-}
-
 int testMatrix(void) {
     try {
         SC::Matrix<int> matrix(3, 3);
@@ -25,5 +15,27 @@ int testMatrix(void) {
         std::cout << e.what() << std::endl;
         exit(EXIT_FAILURE);
     }
+    return EXIT_SUCCESS;
+}
+
+int testTrigo(void) {
+    try {
+
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    return EXIT_SUCCESS;
+}
+
+int main(int argc, char **argv) {
+    std::cout << "---------- Test Matrix ----------" << std::endl;
+    testMatrix();
+    std::cout << "---------- Test Trigo ----------" << std::endl;
+    testTrigo();
+    SC::Window window(argc, argv);
+    //window.init(800, 600, "Test");
+    //window.run();
     return 0;
 }

@@ -8,11 +8,11 @@ namespace SC {
     template<typename T>
     class Matrix {
     private:
+
+    protected:
         int rows;
         int cols;
         T *data;
-
-    protected:
 
     public:
         /// Constructors
@@ -285,7 +285,7 @@ namespace SC {
         }
 
         /// Friend functions
-        std::ostream &operator<<(std::ostream &os, const Matrix &m) {
+        friend std::ostream &operator<<(std::ostream &os, const Matrix &m) {
             for (int i = 0; i < m.rows; i++) {
                 for (int j = 0; j < m.cols; j++) {
                     os << m.data[i * m.cols + j] << " ";
@@ -294,6 +294,18 @@ namespace SC {
             }
             return os;
         }
+
+        friend std::istream &operator>>(std::istream &is, Matrix &m) {
+            for (int i = 0; i < m.rows; i++) {
+                for (int j = 0; j < m.cols; j++) {
+                    std::cout << "Enter element [" << i << "][" << j << "]: ";
+                    is >> m.data[i * m.cols + j];
+                }
+            }
+            return is;
+        }
+
+        /// Test all functions
     };
 }
 #endif

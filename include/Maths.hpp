@@ -7,7 +7,7 @@
 #include "Matrix.hpp"
 
 namespace SC {
-    class Maths : public Algebra, public Trigo, public Matrix<float> {
+class Maths : public Algebra, public SC::Trigo<float>, public SC::Matrix<float> {
     private:
 
     protected:
