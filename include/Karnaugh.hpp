@@ -31,11 +31,15 @@ namespace SC {
         /// @param value: value to set
         void set(const unsigned int row, const unsigned int col, const bool value);
 
+        /// Print formule
+        void print(void) const;
+
         /// Operator
         Karnaugh &operator==(const Karnaugh &tab);
         Karnaugh &operator!=(const Karnaugh &tab);
         Karnaugh &operator+=(const Karnaugh &tab);
         Karnaugh &operator*=(const Karnaugh &tab);
+        Karnaugh &operator!(const Karnaugh &tab);
     };
 }
 #endif

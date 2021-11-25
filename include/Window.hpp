@@ -6,7 +6,7 @@
 #include "Maths.hpp"
 
 namespace SC {
-class Window {
+    class Window {
     private:
         int m_argc;
         char **m_argv;

@@ -31,7 +31,7 @@ SC::Karnaugh &SC::Karnaugh::operator==(const Karnaugh &tab) {
             tmp.set(i, j, this->get(i, j) == tab.get(i, j));
         }
     }
-    return tmp;
+    return *tmp;
 }
 
 SC::Karnaugh &SC::Karnaugh::operator!=(const Karnaugh &tab) {
@@ -54,4 +54,17 @@ SC::Karnaugh &SC::Karnaugh::operator+=(const Karnaugh &tab) {
         }
     }
     return this;
+}
+
+SC::Karnaugh &SC::Karnaugh::operator!(const Karnaugh &tab) {
+    for (unsigned int i = 0; i < this->rows; i++) {
+        for (unsigned int j = 0; j < this->cols; j++) {
+            this.set(i, j, !this->get(i, j));
+        }
+    }
+    return this;
+}
+
+void SC::Karnaugh::print(void) const {
+
 }
